@@ -48,6 +48,7 @@ const addUser = (request, response) => {
   if (!name || !age) {
     responseJSON.id = 'addUserMissingParams';
     respondJSON(request, response, 400, responseJSON);
+    return;
   }
 
   let responseCode = 204; // "no content"
