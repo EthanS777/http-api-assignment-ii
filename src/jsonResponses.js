@@ -63,11 +63,12 @@ const addUser = (request, response) => {
   users[name].age = age;
 
   if (responseCode === 201) {
-    return respondJSON(request, response, responseCode, /* users[name] */ responseJSON);
+    respondJSON(request, response, responseCode, /* users[name] */ responseJSON);
+    return;
   }
 
   // for the 204
-  return respondJSON(request, response, responseCode, {});
+  respondJSON(request, response, responseCode, {});
 };
 
 module.exports = {
